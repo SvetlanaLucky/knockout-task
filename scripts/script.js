@@ -48,11 +48,16 @@ function AppViewModel(){
     self.post=ko.observable("hgj4564564");
     self.attachment=ko.observableArray();
 
-    self.addAttachment=function(){
+    self.addAttachment=function($index){
         self.attachment.push($index);
+        console.log($index);
     };
-
+    function actChecked(){
+        attachment.push(this);
+        return true;
+    }
 
 }
+
 
 ko.applyBindings(new AppViewModel());
