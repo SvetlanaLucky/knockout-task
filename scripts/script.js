@@ -39,10 +39,6 @@ var literatureList='[' +
     ']';
 
 
-
-//var docs=JSON.parse(literatureList);
-//console.log(docs);
-
 function AppViewModel(){
     var self=this;
 
@@ -51,12 +47,10 @@ function AppViewModel(){
     self.topic=ko.observable("fhfhfh");
     self.post=ko.observable("hgj4564564");
     self.attachment=ko.observableArray();
+
     self.addAttachment=function(){
-
+        self.attachment.push($index);
     };
-
-
-
 
 
 }
