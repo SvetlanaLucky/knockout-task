@@ -5,7 +5,7 @@
  * Time: 19:00
  * To change this template use File | Settings | File Templates.
  */
-var literatureList='{"docs":[' +
+var literatureList='[' +
     '{'+
     '"index":"1",' +
     '"title":"О компании QAP INT",' +
@@ -36,8 +36,7 @@ var literatureList='{"docs":[' +
     '"title":"Описание разработанного инструмента CLM2CRM и его интеграция с salesforce.com (english)",' +
     '"iconFile":"assets/images/filetype_pdf.png"' +
     '}'+
-    ']'+
-'}';
+    ']';
 
 
 
@@ -48,7 +47,17 @@ function AppViewModel(){
     var self=this;
 
     self.availableDocs=JSON.parse(literatureList);
-//    console.log(self.availableDocs);
+    self.eMail=ko.observable("gjffhgf");
+    self.topic=ko.observable("fhfhfh");
+    self.post=ko.observable("hgj4564564");
+    self.attachment=ko.observableArray();
+    self.addAttachment=function(){
+
+    };
+
+
+
+
 
 }
 
