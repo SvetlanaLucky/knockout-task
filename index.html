@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheets/reset.css"/>
+    <link rel="stylesheet" href="stylesheets/mainstyles.css"/>
+    <title>Knockout-task</title>
+</head>
+<body>
+    <header>
+        <h1>Лёгкое использование существующих электронных документов (инструкций)</h1>
+    </header>
+    <section>
+        <article class="docs-list">
+            <h2>Список литературы:</h2>
+            <ul data-bind="foreach: availableDocs">
+                <li>
+                    <img data-bind="attr {src:iconFile}" alt=""/>
+                    <div class="doc">
+                        <p data-bind="text: index"></p>
+                        <p data-bind="text: title"></p>
+                    </div>
+                    <!--<input type="checkbox" data-bind="checked:setState, click: $parent.addAttachment"/>-->
+                    <!--<input type="checkbox" data-bind="click: function(){self.attachment().push(availableDocs[$index]);}"/>-->
+                    <!--это стоило прочесть пару часов назад:http://learn.knockoutjs.com/#/?tutorial=webmail-->
+                    <input type="checkbox" data-bind="checkedValue:$data, checked:$root.attachment"/>
+                </li>
+            </ul>
+        </article>
+        <article class="post-content">
+            <h2>Отправка письма:</h2>
+            <form action="" data-bind="submit:open">
+                <label for="mail">E-mail:</label>
+                    <input type="email" id="mail" data-bind="value: eMail"/>
+                <label for="topic">Тема:</label>
+                    <input type="text" id="topic" data-bind="value: topic"/>
+                <label for="post">Текст сообщения:</label>
+                    <textarea id="post" data-bind="value: post"></textarea>
+                <p>Прикреплённые файлы:</p>
+                <ul data-bind="foreach: attachment">
+                    <li>
+                        <p data-bind="text: index"></p>
+                        <p data-bind="text: title"></p>
+                    </li>
+                </ul>
+                <input type="submit"/>
+            </form>
+        </article>
+        <article class="popUp" data-bind="css:openPopUp">
+            <p>E-mail:</p>
+            <p data-bind="text: eMail"></p>
+            <p>Тема:</p>
+            <p data-bind="text: topic"></p>
+            <p>Текст сообщения:</p>
+            <p data-bind="text:  post"></p>
+            <p>Прикреплённые файлы:</p>
+            <ul data-bind="foreach: attachment">
+                <li>
+                    <p data-bind="text: index"></p>
+                    <p data-bind="text: title"></p>
+                </li>
+            </ul>
+            <button data-bind="click: close">Close</button>
+        </article>
+    </section>
+
+<script src="scripts/knockout-3.1.0.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>
