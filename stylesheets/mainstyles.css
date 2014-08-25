@@ -6,29 +6,31 @@ header{
 h1{
     font-size: 30px;
     color: red;
+    text-align: center;
 }
 h2{
     font-size: 20px;
-    color: di, .doc{
+    color: darkred;
+}
+li, .doc{
     display: -webkit-box;
 }
 .docs-list,
 .post-content{
-    width: 400px;
+    width: 500px;
     margin: 20px 20px;
     padding: 10px 10px;
-}
-
-.doc{
-    width: 360px;
-    height: 80px;
-}
-.docs-list{
-    float: left;
 }
 .post-content{
     border-left: 1px solid darkred;
     float: right;
+}
+.docs-list{
+    float: left;
+}
+.doc{
+    width: 360px;
+    height: 80px;
 }
 img {
     width: 32px;
@@ -37,24 +39,31 @@ img {
 li{
     height: 50px;
 }
-label, input, textarea, .post-content p, h2{
+h2, label, input, textarea, .post-content p,.popUp p{
     display: block;
     height: 20px;
     margin: 10px;
 }
 .popUp{
     width: 500px;
-    height: 400px;
+    /*height: 500px;*/
+    padding: 20px;
     position: absolute;
+    box-sizing: border-box;
     background-color: #fff;
     border: 2px solid darkred;
+    box-shadow: rgba(255,0,0,0.8) 5px 5px;
     border-radius: 0 15px 0 15px;
     left: 200px;
-    top: 200px;
+    top: 100px;
     display: none;
 }
 
+button, input, textarea {
+    background-color: rgba(255,0,0,0.4);
+    border: 1px solid darkred ;
+    border-radius: 0 5px 0 5px;
+}
 .visible {
     display: block;
 }
-
