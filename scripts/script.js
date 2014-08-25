@@ -43,19 +43,22 @@ function AppViewModel(){
     var self=this;
 
     self.availableDocs=JSON.parse(literatureList);
-    self.eMail=ko.observable("gjffhgf");
-    self.topic=ko.observable("fhfhfh");
-    self.post=ko.observable("hgj4564564");
+    self.eMail=ko.observable("some@email.com");
+    self.topic=ko.observable("topic");
+    self.post=ko.observable("text");
     self.attachment=ko.observableArray();
 
-    self.addAttachment=function($index){
-        self.attachment.push($index);
-        console.log($index);
-    };
-    function actChecked(){
-        attachment.push(this);
-        return true;
-    }
+//    self.addAttachment=function($index){
+//        self.attachment.push($index);
+
+//        console.log(isChecked());
+//        console.log($index);
+//    };
+
+
+
+
+
 
 }
 
